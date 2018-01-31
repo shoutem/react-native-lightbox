@@ -13,9 +13,10 @@ npm install --save react-native-lightbox
 `navigator` property is optional but recommended on iOS, see next section for `Navigator` configuration.
 
 ```js
+var createReactClass = require('create-react-class');
 var Lightbox = require('react-native-lightbox');
 
-var LightboxView = React.createClass({
+var LightboxView = createReactClass({
   render: function() {
     return (
       <Lightbox navigator={this.props.navigator}>
@@ -31,10 +32,12 @@ var LightboxView = React.createClass({
 
 ### Navigator setup/Android support
 
-For android support you must pass a reference to a `Navigator` since it does not yet have the `Modal` component and is not on the official todo list. See the `Example` project for a complete example. 
+For android support you must pass a reference to a `Navigator` since it does not yet have the `Modal` component and is not on the official todo list. See the `Example` project for a complete example.
 
 ```js
-var MyApp = React.createClass({
+var createReactClass = require('create-react-class');
+
+var MyApp = createReactClass({
   renderScene: function(route, navigator) {
     var Component = route.component;
 
@@ -77,11 +80,10 @@ var MyApp = React.createClass({
 
 ![Demo](https://cloud.githubusercontent.com/assets/378279/9074360/16eac5d6-3b09-11e5-90af-a69980e9f4be.gif)
 
-## Example 
+## Example
 
-Check full example in the `Example` folder. 
+Check full example in the `Example` folder.
 
 ## License
 
 [MIT License](http://opensource.org/licenses/mit-license.html). © Joel Arvidsson
-
