@@ -12,7 +12,7 @@ var PropTypes = require('prop-types');
 var createReactClass = require('create-react-class');
 var {
   Animated,
-  TouchableHighlight,
+  TouchableOpacity,
   View,
 } = require('react-native');
 var TimerMixin = require('react-timer-mixin');
@@ -141,12 +141,12 @@ var Lightbox = createReactClass({
         onLayout={() => {}}
       >
         <Animated.View style={{opacity: this.state.layoutOpacity}}>
-          <TouchableHighlight
+          <TouchableOpacity
             underlayColor={this.props.underlayColor}
             onPress={this.open}
           >
             {this.props.children}
-          </TouchableHighlight>
+          </TouchableOpacity>
         </Animated.View>
         {this.props.navigator ? false : <LightboxOverlay {...this.getOverlayProps()} />}
       </View>
